@@ -2,18 +2,17 @@ package bai_tap;
 
 import java.util.Scanner;
 
-public class In_Snt {
+public class Hien_Thi_Snt_100 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("nhập lượng số nguyên tố để in ra");
-        int number = scanner.nextInt();
-        int count = 0, n = 2, i;
-        for (; count <= number; n++) {
+        int count = 0, n, i;
+        boolean check2=true;
+        for (n=2; n<100; n++) {
             boolean check = true;
             if (n == 2) {
                 check = true;
             } else {
-                for (i=2; i <= Math.sqrt(n); i++) {
+                for (i = 2; i <= Math.sqrt(n); i++) {
                     if (n % i == 0) {
                         check = false;
                         break;
@@ -25,6 +24,5 @@ public class In_Snt {
                 System.out.println(n);
             }
         }
-
     }
 }
