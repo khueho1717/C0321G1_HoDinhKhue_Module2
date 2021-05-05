@@ -19,9 +19,4 @@ public class Circle {
     public double getRadius() {
         return radius;
     }
-
-    public static void main(String[] args) {
-        Circle circle=new Circle();
-        System.out.println("diện tích hình tròn có bán kính: "+circle.getRadius()+" là "+circle.area());
-    }
 }
