@@ -3,18 +3,19 @@ package Fan;
 import jdk.nashorn.internal.runtime.regexp.joni.SearchAlgorithm;
 
 public class Fan {
-    final int SLOW=1;
-    static final int MEDIUM=2;
-    final int FAST=3;
-    private int speed=SLOW;
-    private boolean on=false;
-    private double radius=5;
-    private String color="Blue";
-    public void Fan(int speed,boolean on,double radius,String color){
-        this.speed=speed;
-        this.on=on;
-        this.radius=radius;
-        this.color=color;
+    final int SLOW = 1;
+    static final int MEDIUM = 2;
+    final int FAST = 3;
+    private int speed = SLOW;
+    private boolean on = false;
+    private double radius = 5;
+    private String color = "Blue";
+
+    public void Fan(int speed, boolean on, double radius, String color) {
+        this.speed = speed;
+        this.on = on;
+        this.radius = radius;
+        this.color = color;
     }
 
     public int getSpeed() {
@@ -24,7 +25,8 @@ public class Fan {
     public double getRadius() {
         return radius;
     }
-    public boolean getOn(){
+
+    public boolean getOn() {
         return on;
     }
 
@@ -47,13 +49,14 @@ public class Fan {
     public void setColor(String color) {
         this.color = color;
     }
-    public String toString(){
-        return speed+" "+on+" "+radius+" "+color;
+
+    public String toString() {
+        return speed + " " + on + " " + radius + " " + color;
     }
 
     public static void main(String[] args) {
-        Fan fan1=new Fan();
-        Fan fan2=new Fan();
+        Fan fan1 = new Fan();
+        Fan fan2 = new Fan();
         fan1.setRadius(10);
         fan1.setColor("yellow");
         fan1.setOn(true);
