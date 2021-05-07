@@ -66,5 +66,26 @@ public class PTBac2 {
         x1=((-getB()-Math.sqrt(getDiscriminant()))/(2*getA()));
         return x1;
     }
+    public void kiemTra(){
+        if (getA()==0){
+            if (getB()==0){
+                System.out.println("phương trình vô nghiệm");
+            }else {
+                System.out.println("phương trình có nghiệm duy nhất: "+getRootOnly());
+            }
+        }else {
+            if (getDiscriminant()<0){
+                System.out.println("phương trình vô nghiệm");
+            }else {
+                if (getDiscriminant()==0){
+                    System.out.println("phương trình có nghiệm kép: "+getRootDouble());
+                }else {
+                    System.out.println("phương trình có hai nghiệm phân biệt");
+                    System.out.println("x1: "+getRoot1());
+                    System.out.println("x2: "+getRoot2());
+                }
+            }
+        }
+    }
 }
 
