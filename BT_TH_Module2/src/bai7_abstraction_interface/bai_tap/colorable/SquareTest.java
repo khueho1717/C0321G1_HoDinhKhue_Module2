@@ -10,7 +10,7 @@ public class SquareTest {
         Rectangle[] arr = {rectangle,square1,rectangle1};
         for ( Rectangle shape:arr){
             System.out.println(shape);
-            if (shape.isFilled()==true  ){
+            if (shape.getColor() instanceof String ){
                shape.howToColor();
             }
         }
