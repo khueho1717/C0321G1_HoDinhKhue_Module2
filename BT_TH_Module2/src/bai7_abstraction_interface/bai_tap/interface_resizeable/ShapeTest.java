@@ -1,6 +1,8 @@
 package bai7_abstraction_interface.bai_tap.interface_resizeable;
 
 import bai6_inheritance.bai_tap.circle_circlenin.Circle;
+import bai7_abstraction_interface.bai_tap.colorable.Shape;
+import bai7_abstraction_interface.bai_tap.colorable.Square;
 
 import java.awt.*;
 
@@ -19,10 +21,11 @@ public class ShapeTest {
         ) {
             System.out.println(shape);
         }
+        square2.setSide(square2.rezise(Math.random()*100));
         System.out.println("day la kich thuoc cua doi tuong khi da thay doi hinh kich thuoc");
         for (double shape : shapeTests
         ) {
-            System.out.println(Math.round(shape*circle2.rezise(Math.random()*100)));
+            System.out.println(shape);
         }
     }
 }

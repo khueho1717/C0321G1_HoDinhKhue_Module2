@@ -4,50 +4,60 @@ public class TennisGame {
     public static String getScore(String player1Name, String player2Name, int markScore1, int markScore2) {
         String message = "";
         int tempScore = 0;
+        final String SCORE = "Love-All";
+        final String SCORE1 = "Fifteen-All";
+        final String SCORE2 = "Thirty-All";
+        final String SCORE3 = "Forty-All";
+        final String MORE = "Deuce";
         if (markScore1 == markScore2) {
             switch (markScore1) {
                 case 0:
-                    message = "Love-All";
-                    break;
+                    return SCORE;
                 case 1:
-                    message = "Fifteen-All";
-                    break;
+                    return SCORE1;
                 case 2:
-                    message = "Thirty-All";
-                    break;
+                    return SCORE2;
                 case 3:
-                    message = "Forty-All";
-                    break;
+                    return SCORE3;
                 default:
-                    message = "Deuce";
-                    break;
+                    return MORE;
 
             }
         } else if (markScore1 >= 4 || markScore2 >= 4) {
             int minusResult = markScore1 - markScore2;
-            if (minusResult == 1) message = "Advantage player1";
-            else if (minusResult == -1) message = "Advantage player2";
-            else if (minusResult >= 2) message = "Win for player1";
-            else message = "Win for player2";
+            if (minusResult >0 ) {
+                if (minusResult==1){
+                    return "Advantage player1";
+                }else {
+                    return "Win for player1";
+                }
+            } else{
+                if (minusResult == -1) {
+                    return "Advantage player2";
+                }else {
+                    return "Win for player2";
+                }
+            }
         } else {
             for (int i = 1; i < 3; i++) {
-                if (i == 1) tempScore = markScore1;
-                else {
+                if (i == 1) {
+                    tempScore = markScore1;
+                }else {
                     message += "-";
                     tempScore = markScore2;
                 }
                 switch (tempScore) {
                     case 0:
-                        message += "Love";
+                        message += SCORE;
                         break;
                     case 1:
-                        message += "Fifteen";
+                        message += SCORE1;
                         break;
                     case 2:
-                        message += "Thirty";
+                        message += SCORE2;
                         break;
                     case 3:
-                        message += "Forty";
+                        message += SCORE3;
                         break;
                 }
             }
