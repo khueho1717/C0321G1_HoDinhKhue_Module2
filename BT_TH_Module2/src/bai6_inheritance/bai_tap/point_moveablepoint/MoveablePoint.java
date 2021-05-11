@@ -43,7 +43,7 @@ public class MoveablePoint extends Point {
         Object[] speed = new Object[2];
         speed[0] = xSpeed;
         speed[1] = ySpeed;
-        return speed[0] + "," + speed[1];
+        return speed;
     }
 
     @Override
@@ -54,6 +54,6 @@ public class MoveablePoint extends Point {
     public String move() {
         this.setX(getX() + xSpeed);
         this.setY(getY() + ySpeed);
-        return super.toString();
+        return toString();
     }
 }

@@ -28,7 +28,7 @@ public class Point3d extends Point2d {
         xyz[0]=x;
         xyz[1]=y;
         xyz[2]=y;
-        return xyz[0]+","+xyz[1]+","+xyz[2];
+        return xyz;
     }
 
     @Override
