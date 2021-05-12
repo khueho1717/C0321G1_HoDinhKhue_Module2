@@ -16,7 +16,9 @@ public class MyLinkedListTest {
         System.out.println(myLinkedList.removeElement(7));
         System.out.println(myLinkedList.contains("last"));
         myLinkedList.printList();
-        System.out.println(myLinkedList.indexOf(3));
 
+        System.out.println(myLinkedList.indexOf(3));
+//        System.out.println(myLinkedList.addElement(7));
+        System.out.println(myLinkedList.get(2));
     }
 }

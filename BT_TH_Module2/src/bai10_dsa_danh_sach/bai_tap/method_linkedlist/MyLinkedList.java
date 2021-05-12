@@ -3,7 +3,7 @@ package bai10_dsa_danh_sach.bai_tap.method_linkedlist;
 
 public class MyLinkedList {
     private Node head;
-    private int numNodes;
+    private int numNodes=1;
 
     public MyLinkedList(Object data) {
         head = new Node(data);
@@ -73,6 +73,7 @@ public class MyLinkedList {
             }
             index++;
         }
+        numNodes++;
         return false;
     }
 
@@ -114,11 +115,50 @@ public class MyLinkedList {
         return -1;
     }
 
+    public boolean addElement(Object o) {
+        if (contains(o) == false) {
+            addLast(o);
+            numNodes++;
+            return true;
+        }
+        return false;
+    }
+
+    public Object get(int index) {
+        Node temp = head;
+        int i = 0;
+        while (i <= index) {
+            if (i == index) {
+                return temp.data;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return "không nằm trong danh sách";
+    }
+
+    public Object getFirst() {
+        Node temp = head;
+        return temp.data;
+    }
+
+    public Object getLast() {
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        return temp.data;
+    }
+
     public void printList() {
         MyLinkedList.Node temp = head;
         while (temp != null) {
             System.out.println(temp.data);
             temp = temp.next;
         }
+    }
+    public void clear(Object data) {
+        head = new Node(data);
+        numNodes = 1;
     }
 }
