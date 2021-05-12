@@ -15,10 +15,10 @@ public class MyListTest {
         System.out.println(myList.indexOf(3));
         System.out.println(myList.add(3));
         MyList<Integer> myClone = myList.clone();
-        myList.add(0, 1);
-        myList.add(1, 2);
-        myList.add(2, 3);
-        myList.add(3, 4);
+        myClone.add(0, 1);
+        myClone.add(1, 2);
+        myClone.add(2, 3);
+        myClone.add(3, 4);
         System.out.println(myClone.get(2));
     }
 }
