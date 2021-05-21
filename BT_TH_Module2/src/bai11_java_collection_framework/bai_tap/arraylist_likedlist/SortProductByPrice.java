@@ -1,7 +1,6 @@
-package bai11_java_collection_framework.bai_tap.su_dung_arraylít_likedlist;
+package bai11_java_collection_framework.bai_tap.arraylist_likedlist;
 
 import java.util.Comparator;
-import java.util.stream.Collector;
 
 public class SortProductByPrice implements Comparator<Product> {
     @Override

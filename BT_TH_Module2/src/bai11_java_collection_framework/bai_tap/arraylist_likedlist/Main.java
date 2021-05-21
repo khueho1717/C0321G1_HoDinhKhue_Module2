@@ -1,8 +1,8 @@
-package bai11_java_collection_framework.bai_tap.su_dung_arraylít_likedlist;
+package bai11_java_collection_framework.bai_tap.arraylist_likedlist;
 
 import java.util.Scanner;
 
-import static bai11_java_collection_framework.bai_tap.su_dung_arraylít_likedlist.ProductManager.listProduct;
+import static bai11_java_collection_framework.bai_tap.arraylist_likedlist.ProductManager.listProduct;
 
 public class Main {
     public static void main(String[] args) {

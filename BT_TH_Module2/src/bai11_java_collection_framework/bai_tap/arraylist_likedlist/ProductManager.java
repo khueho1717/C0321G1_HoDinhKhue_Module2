@@ -1,4 +1,4 @@
-package bai11_java_collection_framework.bai_tap.su_dung_arraylít_likedlist;
+package bai11_java_collection_framework.bai_tap.arraylist_likedlist;
 
 import java.util.ArrayList;
 import java.util.Collections;
