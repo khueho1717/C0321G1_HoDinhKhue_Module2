@@ -1,11 +1,13 @@
 package bai15_io_text_file.bai_tap.read_file_csv;
 
+import java.io.FileReader;
+
 public class Country {
     private int id;
     private String code;
     private String name;
 
-    public Country() {
+    public Country(FileReader fileReader) {
     }
 
     public Country(int id, String code, String name) {

@@ -3,7 +3,7 @@ package model;
 public abstract class Services {
     public String nameServices;
     public float useArea;
-    public int rentalCosts;
+    public float rentalCosts;
     public int maxQuantity;
     public String rentalType;
     public String id;
@@ -14,7 +14,7 @@ public abstract class Services {
     public Services() {
     }
 
-    public Services(String nameServices, float useArea, int rentalCosts, int maxQuantity, String rentalType, String id) {
+    public Services(String nameServices, float useArea, float rentalCosts, int maxQuantity, String rentalType, String id) {
         this.nameServices = nameServices;
         this.useArea = useArea;
         this.rentalCosts = rentalCosts;
@@ -31,7 +31,7 @@ public abstract class Services {
         return useArea;
     }
 
-    public int getRentalCosts() {
+    public float getRentalCosts() {
         return rentalCosts;
     }
 
@@ -55,7 +55,7 @@ public abstract class Services {
         this.useArea = useArea;
     }
 
-    public void setRentalCosts(int rentalCosts) {
+    public void setRentalCosts(float rentalCosts) {
         this.rentalCosts = rentalCosts;
     }
 

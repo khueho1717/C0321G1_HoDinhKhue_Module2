@@ -1,9 +1,10 @@
 package bai15_io_text_file.bai_tap.read_file_csv;
 
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main {
     // Delimiter used in CSV file
@@ -13,13 +14,13 @@ public class Main {
     // CSV file header
     private static final String FILE_HEADER = "id,code,name";
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
 
         String fileName = "bt_th_module2/src/bai15_io_text_file/bai_tap/read_file_csv/contries.csv";
         writeCsvFile(fileName);
     }
 
-    public static void writeCsvFile(String fileName) {
+    public static void writeCsvFile(String fileName) throws FileNotFoundException {
         // Create new Countrys objects
         Country country1 = new Country(1, "US", "United States");
         Country country2 = new Country(2, "VN", "Viet Nam");
@@ -76,5 +77,32 @@ public class Main {
                 e.printStackTrace();
             }
         }
+//        String url = "bt_th_module2/src/bai15_io_text_file/bai_tap/read_file_csv/contries.csv";
+//
+//        // Đọc dữ liệu từ File với File và FileReader
+//        File file = new File(url);
+//        BufferedReader reader = new BufferedReader(new FileReader(file));
+//
+//        try {
+//            String line = reader.readLine();
+//            while (line != null) {
+//                System.out.println(line);
+//                line = reader.readLine();
+//            }
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(Main.class.getName())
+//                    .log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(Main.class.getName())
+//                    .log(Level.SEVERE, null, ex);
+//        } finally {
+//            try {
+//                reader.close();
+//                // file.close();
+//            } catch (IOException ex) {
+//                Logger.getLogger(Main.class.getName())
+//                        .log(Level.SEVERE, null, ex);
+//            }
+//        }
     }
 }
