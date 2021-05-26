@@ -3,7 +3,7 @@ package model;
 public class Room extends Services {
     private String freeServiceIncludes;
 
-    public Room() {
+    public Room(String string, float v, float parseFloat, int i, String s, String string1, String s1, String string2, float aFloat, int parseInt) {
     }
 
     public Room(String freeServiceIncludes) {
@@ -21,6 +21,20 @@ public class Room extends Services {
 
     public void setFreeServiceIncludes(String freeServiceIncludes) {
         this.freeServiceIncludes = freeServiceIncludes;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+
+                "nameServices='" + nameServices + '\'' +
+                ", useArea=" + useArea +
+                ", rentalCosts=" + rentalCosts +
+                ", maxQuantity=" + maxQuantity +
+                ", rentalType='" + rentalType + '\'' +
+                ", id='" + id + '\'' +
+                ", freeServiceIncludes='" + freeServiceIncludes +
+                '}';
     }
 
     @Override

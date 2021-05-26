@@ -50,7 +50,7 @@ public class MannagerProducts {
         System.out.println("nhap thuong hieu: ");
         String brand = sc.nextLine();
         System.out.println("nhap gia: ");
-        float price = sc.nextFloat();
+        float price = Float.parseFloat(sc.nextLine());
         System.out.println("mo ta san pham; ");
         String disription = sc.nextLine();
         Products product = new Products(id, nameProduct, brand, price, disription);

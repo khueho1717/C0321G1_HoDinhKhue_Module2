@@ -49,7 +49,22 @@ public class House extends Services {
 
     @Override
     void showInfor() {
-        System.out.println("Tên dịch vụ: "+this.nameServices + " " +"Diện tích"+ this.useArea + " " + "Chi phí: "+this.rentalCosts + " " + "Số lượng người: "+this.maxQuantity + " " + "Kiểu thuê theo: "+this.rentalType + " " + "Mã số: "+this.id+ " " + "Kiểu phòng: "+this.roomStandard + " " +"Mô tả tiện nghi: "+ this.convenient + " " + "Số tầng: "+this.numberOfFloors
+        System.out.println("Tên dịch vụ: " + this.nameServices + " " + "Diện tích" + this.useArea + " " + "Chi phí: " + this.rentalCosts + " " + "Số lượng người: " + this.maxQuantity + " " + "Kiểu thuê theo: " + this.rentalType + " " + "Mã số: " + this.id + " " + "Kiểu phòng: " + this.roomStandard + " " + "Mô tả tiện nghi: " + this.convenient + " " + "Số tầng: " + this.numberOfFloors
         );
+    }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "id='" + id + '\'' +
+                ", nameServices='" + nameServices + '\'' +
+                ", useArea=" + useArea +
+                ", rentalCosts=" + rentalCosts +
+                ", maxQuantity=" + maxQuantity +
+                ", rentalType='" + rentalType + '\'' +
+                "roomStandard='" + roomStandard + '\'' +
+                ", convenient='" + convenient + '\'' +
+                ", numberOfFloors=" + numberOfFloors +
+                '}';
     }
 }
