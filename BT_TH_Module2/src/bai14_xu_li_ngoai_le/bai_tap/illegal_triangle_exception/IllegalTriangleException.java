@@ -4,13 +4,8 @@ import java.util.Scanner;
 
 public class IllegalTriangleException extends Exception {
 
-    protected double side1;
-
-    protected double side2;
-
-    protected double side3;
-    public void message(){
-        System.out.println("Valid Triangle Side Numbers");
+    IllegalTriangleException(String string){
+        super(string);
     }
 
 }

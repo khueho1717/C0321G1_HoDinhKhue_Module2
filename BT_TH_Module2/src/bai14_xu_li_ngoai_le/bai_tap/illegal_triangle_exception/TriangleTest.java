@@ -3,46 +3,26 @@ package bai14_xu_li_ngoai_le.bai_tap.illegal_triangle_exception;
 import java.util.Scanner;
 
 public class TriangleTest {
-    public static double triangle(double side1, double side2, double side3) {
-
-        if (side1 <= 0 || (side1 + side2) < side3 || (side1 + side3) < side2) {
-            throw new IllegalArgumentException("Invalid Triangle Side Numbers");
-        } else if (side2 <= 0 || (side2 + side3) < side1) {
-
-            throw new IllegalArgumentException("Invalid Triangle Side Numbers");
-        } else if (side3 <= 0) {
-
-            throw new IllegalArgumentException("Invalid Triangle Side Numbers");
-        } else {
-
-            throw new IllegalArgumentException("Valid Triangle Side Numbers");
-        }
-    }
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("input Side of trangle");
-        System.out.println("side1: ");
-        double side1 = scanner.nextDouble();
-        System.out.println("side2: ");
-        double side2 = scanner.nextDouble();
-        System.out.println("side3: ");
-        double side3 = scanner.nextDouble();
-        try {
+        Scanner scanner=new Scanner(System.in);
+        while (true){
+            try {
+                System.out.println("nhập cạnh thứ nhất:");
+                int side1=Integer.parseInt(scanner.nextLine());
+                System.out.println("nhập cạch thứ hai:");
+                int side2=Integer.parseInt(scanner.nextLine());
+                System.out.println("nhập csnhj thứ ba:");
+                int side3=Integer.parseInt(scanner.nextLine());
+                Triangle triangle=new Triangle(side1,side2,side3);
+                System.out.println(triangle);
+            } catch (NumberFormatException side) {
+                System.err.println(side.getMessage());
+                System.err.println("giá trị nhập vào không phải là số!!! mời nhâpọ lại");
 
-            double result = triangle(side1, side2, side3);
-
-            System.out.println("Valid triangle sides");
-
-
-        } catch (Exception e) {
-
-            System.out.println("Exception: Invalid Triangle Side Numbers");
-
+            }catch (IllegalTriangleException e){
+                System.err.println(e.getMessage());
+                System.err.println("mời nhập lại!!!");
+            }
         }
-
-        System.out.println("Exception continues......");
-
-
     }
 }
