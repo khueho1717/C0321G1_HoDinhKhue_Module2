@@ -11,7 +11,7 @@ public class TriangleTest {
                 int side1=Integer.parseInt(scanner.nextLine());
                 System.out.println("nhập cạch thứ hai:");
                 int side2=Integer.parseInt(scanner.nextLine());
-                System.out.println("nhập csnhj thứ ba:");
+                System.out.println("nhập cạnh thứ ba:");
                 int side3=Integer.parseInt(scanner.nextLine());
                 Triangle triangle=new Triangle(side1,side2,side3);
                 System.out.println(triangle);
