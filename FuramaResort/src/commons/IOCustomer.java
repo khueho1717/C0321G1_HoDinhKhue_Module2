@@ -21,10 +21,10 @@ public class IOCustomer {
 
 //        System.out.println(inputUserBirthDay());
 //        addCustomer();
-        showCustomers();
+//        showCustomers();
     }
 
-    public static void addCustomer() throws UserException {
+    public  void addCustomer() throws UserException {
         System.out.println("them khach hang");
         String nameCustomer = inputUserName();
         String birthDay = inputUserBirthDay();
@@ -80,7 +80,7 @@ public class IOCustomer {
 
     }
 
-    public static void showCustomers() {
+    public  void showCustomers() {
         try {
             List<Customer> customers2 = new ArrayList<>();
             FileReader fileReader = new FileReader("FuramaResort/src/data/Customer.csv");

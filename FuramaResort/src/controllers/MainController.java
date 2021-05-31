@@ -1,6 +1,9 @@
 package controllers;
 
+import commons.IOCustomer;
+import commons.IOEmployee;
 import commons.IOServices;
+import commons.UserException;
 
 import java.util.Scanner;
 
@@ -10,13 +13,15 @@ import static controllers.ShowServices.*;
 public class MainController {
     static Scanner scanner = new Scanner(System.in);
     static IOServices ioServices = new IOServices();
+    static IOEmployee ioEmployee = new IOEmployee();
+    static IOCustomer ioCustomer = new IOCustomer();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserException {
 
         disPlayMenu();
     }
 
-    public static void disPlayMenu() {
+    public static void disPlayMenu() throws UserException {
 
 
         System.out.println("lua chon hien thi menu");
@@ -37,6 +42,19 @@ public class MainController {
                 case 2:
                     showServices();
                     break;
+                case 3:
+                    ioCustomer.addCustomer();
+                    checkMenu = false;
+                    break;
+                case 4:
+                    ioCustomer.showCustomers();
+                    checkMenu = false;
+                    break;
+                case 6:
+                    ioEmployee.showEmployee();
+                    checkMenu = false;
+                    disPlayMenu();
+                    break;
                 case 7:
                     checkMenu = false;
                     break;
@@ -44,7 +62,7 @@ public class MainController {
         }
     }
 
-    public static void addNewServices() {
+    public static void addNewServices() throws UserException {
 
         System.out.println("lua chon dich vu muon them vao");
         System.out.println("1. Add New Villa");
@@ -57,16 +75,16 @@ public class MainController {
         while (checkAdd) {
             switch (choise) {
                 case 1:
-                    ioServices.addNewVilla(fileNameVilla);
-                    checkAdd=false;
+                    ioServices.addNewVilla("FuramaResort/src/data/Villa.csv");
+                    checkAdd = false;
                     break;
                 case 2:
-                    ioServices.addNewHouse(fileNameHouse);
-                    checkAdd=false;
+                    ioServices.addNewHouse("FuramaResort/src/data/House.csv");
+                    checkAdd = false;
                     break;
                 case 3:
-                    ioServices.addNewRoom(fileNameRoom);
-                    checkAdd=false;
+                    ioServices.addNewRoom("FuramaResort/src/data/Room.csv");
+                    checkAdd = false;
                     break;
                 case 4:
                     disPlayMenu();
@@ -79,7 +97,7 @@ public class MainController {
 
     }
 
-    public static void showServices() {
+    public static void showServices() throws UserException {
         System.out.println("Danh sach dich vu can hien thi");
         System.out.println("1. Show all Villa");
         System.out.println("2. Show all House");
@@ -94,22 +112,34 @@ public class MainController {
         while (checkShow) {
             switch (choiseShow) {
                 case 1:
-                    showServiceVilla(fileNameVilla);
-                    checkShow=false;
+                    showServiceVilla("FuramaResort/src/data/Villa.csv");
+                    checkShow = false;
                     break;
                 case 2:
-                    showServiceHouse(fileNameHouse);
-                    checkShow=false;
+                    showServiceHouse("FuramaResort/src/data/House.csv");
+                    checkShow = false;
                     break;
                 case 3:
-                    showServiceRoom(fileNameRoom);
-                    checkShow=false;
+                    showServiceRoom("FuramaResort/src/data/Room.csv");
+                    checkShow = false;
+                    break;
+                case 4:
+                    showServiceVillaNotDuplicate("FuramaResort/src/data/Villa.csv");
+                    checkShow = false;
+                    break;
+                case 5:
+                    showServiceHouseNotDuplicate("FuramaResort/src/data/House.csv");
+                    checkShow = false;
+                    break;
+                case 6:
+                    showServiceRoomNotDuplicate("FuramaResort/src/data/Room.csv");
+                    checkShow = false;
                     break;
                 case 7:
                     disPlayMenu();
                     break;
                 case 8:
-                    checkShow=false;
+                    checkShow = false;
                     break;
             }
         }

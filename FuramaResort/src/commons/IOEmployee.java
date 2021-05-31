@@ -1,27 +1,26 @@
 package commons;
 
+import model.Customer;
 import model.Employee;
-import model.Villa;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.io.*;
+import java.util.*;
 
 public class IOEmployee {
     private static final String COMMA_DELIMITER1 = "@";
     private static final String NEW_LINE_SEPARATOR1 = "\n";
-    private static String fileEmployee = "FuramaResort/src/data/Employee.csv";
+     static String fileEmployee = "FuramaResort/src/data/Employee.csv";
     static List<Employee> employeeList = new ArrayList<>();
-
-    public static void main(String[] args) {
-        addEmployee();
+    static Map<Integer, Employee> map = new HashMap<Integer, Employee>();
 
 
+    public  void showEmployee(){
+        Set<Integer> set = realFileEmployee().keySet();
+        for (Integer key : set) {
+            System.out.println(key + " " + realFileEmployee().get(key).toString());
+        }
     }
-
-    public static void addEmployee() {
+    public  void addEmployee() {
         Employee employee1 = new Employee("Nguyễn Văn An", 23, "Hà Nội");
         employeeList.add(employee1);
         Employee employee2 = new Employee("Trần Văn Linh ", 33, "Đà Nẵng");
@@ -45,7 +44,7 @@ public class IOEmployee {
         FileWriter fileWriter = null;
 
         try {
-            fileWriter = new FileWriter(fileEmployee, true);
+            fileWriter = new FileWriter(fileEmployee, false);
 
             for (Employee employee : employeeList) {
                 fileWriter.append(employee.getName());
@@ -70,6 +69,32 @@ public class IOEmployee {
                 e.printStackTrace();
             }
         }
+    }
+
+    public static Map<Integer, Employee> realFileEmployee() {
+        try {
+            List<Employee> employee2 = new ArrayList<>();
+            FileReader fileReader = new FileReader(fileEmployee);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] string = line.split("@");
+                Employee employee = new Employee(string[0], Integer.parseInt(string[1]), string[2]);
+                employee2.add(employee);
+                int id = 101;
+                for (Employee element : employee2
+                ) {
+                    map.put(id++, element);
+                }
+            }
+            bufferedReader.close();
+            fileReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return map;
     }
 
 
