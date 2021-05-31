@@ -1,15 +1,10 @@
 package controllers;
 
-import model.House;
-import model.Room;
-import model.Villa;
+import commons.IOServices;
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
-import static controllers.IOServices.*;
+import static commons.IOServices.*;
 import static controllers.ShowServices.*;
 
 public class MainController {
@@ -63,19 +58,22 @@ public class MainController {
             switch (choise) {
                 case 1:
                     ioServices.addNewVilla(fileNameVilla);
+                    checkAdd=false;
                     break;
                 case 2:
                     ioServices.addNewHouse(fileNameHouse);
+                    checkAdd=false;
                     break;
                 case 3:
                     ioServices.addNewRoom(fileNameRoom);
+                    checkAdd=false;
                     break;
                 case 4:
                     disPlayMenu();
-                    checkAdd = false;
                     break;
                 case 5:
                     checkAdd = false;
+                    break;
             }
         }
 
@@ -97,19 +95,22 @@ public class MainController {
             switch (choiseShow) {
                 case 1:
                     showServiceVilla(fileNameVilla);
+                    checkShow=false;
                     break;
                 case 2:
                     showServiceHouse(fileNameHouse);
+                    checkShow=false;
                     break;
                 case 3:
                     showServiceRoom(fileNameRoom);
+                    checkShow=false;
                     break;
                 case 7:
                     disPlayMenu();
-                    checkShow = false;
                     break;
                 case 8:
-                    checkShow = false;
+                    checkShow=false;
+                    break;
             }
         }
     }

@@ -86,8 +86,8 @@ public class MannagerProducts {
     }
 
     public static void showProducts() {
-        readDataFromFile("bt_th_module2/src/bai16_io_file_binary/bai_tap/product_management_file_binary/products.txt");
-        for (Products elment : products) {
+
+        for (Products elment : readDataFromFile("bt_th_module2/src/bai16_io_file_binary/bai_tap/product_management_file_binary/products.txt")) {
             System.out.println(elment.toString());
         }
     }

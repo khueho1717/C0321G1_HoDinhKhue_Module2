@@ -1,6 +1,8 @@
 package model;
 
-public class Customer {
+import java.io.Serializable;
+
+public class Customer implements Comparable<Customer> {
     public String nameCustomer;
     public String birthDay;
     public String gender;
@@ -15,8 +17,8 @@ public class Customer {
     }
 
     public Customer(String nameCustomer, String birthDay, String gender, String numberCMND, String numberPhone, String email, String typeOfGuest, String address) {
-        this.nameCustomer = nameCustomer;
-        this.birthDay = birthDay;
+        this.setNameCustomer(nameCustomer);
+        this.setBirthDay(birthDay);
         this.gender = gender;
         this.numberCMND = numberCMND;
         this.numberPhone = numberPhone;
@@ -26,8 +28,8 @@ public class Customer {
     }
 
     public Customer(String nameCustomer, String birthDay, String gender, String numberCMND, String numberPhone, String email, String typeOfGuest, String address, Services services) {
-        this.nameCustomer = nameCustomer;
-        this.birthDay = birthDay;
+        this.setNameCustomer(nameCustomer);
+        this.setBirthDay(birthDay);
         this.gender = gender;
         this.numberCMND = numberCMND;
         this.numberPhone = numberPhone;
@@ -111,13 +113,21 @@ public class Customer {
 
     public String showInfor() {
         return
-                "nameCustomer='" + nameCustomer + '\'' +
-                        ", birthDay='" + birthDay + '\'' +
-                        ", gender='" + gender + '\'' +
-                        ", numberCMND='" + numberCMND + '\'' +
-                        ", numberPhone='" + numberPhone + '\'' +
-                        ", email='" + email + '\'' +
-                        ", typeOfGuest='" + typeOfGuest + '\'' +
-                        ", address='" + address;
+                "nameCustomer='" + getNameCustomer() + '\'' +
+                        ", birthDay='" + getBirthDay() + '\'' +
+                        ", gender='" + getGender() + '\'' +
+                        ", numberCMND='" + getNumberCMND() + '\'' +
+                        ", numberPhone='" + getNumberPhone() + '\'' +
+                        ", email='" + getEmail() + '\'' +
+                        ", typeOfGuest='" + getTypeOfGuest() + '\'' +
+                        ", address='" + getAddress();
     }
+
+
+    @Override
+    public int compareTo(Customer o) {
+        return this.getNameCustomer().compareTo(o.getNameCustomer());
+    }
+
+
 }
