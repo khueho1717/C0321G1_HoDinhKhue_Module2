@@ -5,6 +5,7 @@ import commons.IOEmployee;
 import commons.IOServices;
 import commons.UserException;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import static commons.IOServices.*;
@@ -15,14 +16,14 @@ public class MainController {
     static IOServices ioServices = new IOServices();
     static IOEmployee ioEmployee = new IOEmployee();
     static IOCustomer ioCustomer = new IOCustomer();
-    static NewBooking newBooking=new NewBooking();
+    static NewBooking newBooking = new NewBooking();
 
-    public static void main(String[] args) throws UserException {
+    public static void main(String[] args) throws UserException, IOException {
 
         disPlayMenu();
     }
 
-    public static void disPlayMenu() throws UserException {
+    public static void disPlayMenu() throws UserException, IOException {
 
 
         System.out.println("lua chon hien thi menu");
@@ -52,7 +53,9 @@ public class MainController {
                     checkMenu = false;
                     break;
                 case 5:
-                    
+                    addNewBooking();
+                    checkMenu=false;
+                    break;
                 case 6:
                     ioEmployee.showEmployee();
                     checkMenu = false;
@@ -65,7 +68,7 @@ public class MainController {
         }
     }
 
-    public static void addNewServices() throws UserException {
+    public static void addNewServices() throws UserException, IOException {
 
         System.out.println("lua chon dich vu muon them vao");
         System.out.println("1. Add New Villa");
@@ -100,7 +103,7 @@ public class MainController {
 
     }
 
-    public static void showServices() throws UserException {
+    public static void showServices() throws UserException, IOException {
         System.out.println("Danh sach dich vu can hien thi");
         System.out.println("1. Show all Villa");
         System.out.println("2. Show all House");
@@ -132,6 +135,7 @@ public class MainController {
                     break;
                 case 5:
                     showServiceHouseNotDuplicate("FuramaResort/src/data/House.csv");
+                    disPlayMenu();
                     checkShow = false;
                     break;
                 case 6:
@@ -143,6 +147,39 @@ public class MainController {
                     break;
                 case 8:
                     checkShow = false;
+                    break;
+            }
+        }
+    }
+
+    public static void addNewBooking() throws IOException, UserException {
+        System.out.println("Lựa chọn dịch vụ booking");
+        System.out.println("1.\tBooking Villa\n" +
+                "2.\tBooking House\n" +
+                "3.\tBooking Room\n" +
+                "4.\tExit\n");
+        int choiseBooking=scanner.nextInt();
+        boolean checkBokking = true;
+        while (checkBokking) {
+            switch (choiseBooking) {
+                case 1:
+                    NewBooking.bookingVilla();
+                    disPlayMenu();
+                    checkBokking = false;
+                    break;
+                case 2:
+                    NewBooking.bookingHouse();
+                    disPlayMenu();
+                    checkBokking = false;
+                    break;
+                case 3:
+                    NewBooking.bookingRoom();
+                    disPlayMenu();
+                    checkBokking = false;
+                    break;
+                case 4:
+                    checkBokking = false;
+                    disPlayMenu();
                     break;
             }
         }
