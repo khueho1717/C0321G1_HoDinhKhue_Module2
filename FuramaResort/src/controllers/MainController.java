@@ -15,6 +15,7 @@ public class MainController {
     static IOServices ioServices = new IOServices();
     static IOEmployee ioEmployee = new IOEmployee();
     static IOCustomer ioCustomer = new IOCustomer();
+    static NewBooking newBooking=new NewBooking();
 
     public static void main(String[] args) throws UserException {
 
@@ -50,6 +51,8 @@ public class MainController {
                     ioCustomer.showCustomers();
                     checkMenu = false;
                     break;
+                case 5:
+                    
                 case 6:
                     ioEmployee.showEmployee();
                     checkMenu = false;

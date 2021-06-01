@@ -92,9 +92,10 @@ public class IOCustomer {
                 customers2.add(customer);
 
                 Collections.sort(customers2);
+                int i=1;
                 for (Customer element : customers2
                 ) {
-                    System.out.println(element.showInfor());
+                    System.out.println(i+++": "+element.showInfor());
                 }
             }
             bufferedReader.close();
