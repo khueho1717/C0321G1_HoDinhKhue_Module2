@@ -1,9 +1,6 @@
 package controllers;
 
-import commons.IOCustomer;
-import commons.IOEmployee;
-import commons.IOServices;
-import commons.UserException;
+import commons.*;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -17,6 +14,7 @@ public class MainController {
     static IOEmployee ioEmployee = new IOEmployee();
     static IOCustomer ioCustomer = new IOCustomer();
     static NewBooking newBooking = new NewBooking();
+    static BookingTickets bookingTickets=new BookingTickets();
 
     public static void main(String[] args) throws UserException, IOException {
 
@@ -33,27 +31,33 @@ public class MainController {
         System.out.println("4. Show Information of Customer");
         System.out.println("5. Add New Booking");
         System.out.println("6. Show Information of Employer");
-        System.out.println("7. Exit");
+        System.out.println("7. Booking Teckets 4D");
+        System.out.println("9. Exit");
         int choise = scanner.nextInt();
         boolean checkMenu = true;
         while (checkMenu) {
             switch (choise) {
                 case 1:
                     addNewServices();
+                    disPlayMenu();
                     break;
                 case 2:
                     showServices();
+                    disPlayMenu();
                     break;
                 case 3:
                     ioCustomer.addCustomer();
+                    disPlayMenu();
                     checkMenu = false;
                     break;
                 case 4:
                     ioCustomer.showCustomers();
+                    disPlayMenu();
                     checkMenu = false;
                     break;
                 case 5:
                     addNewBooking();
+                    disPlayMenu();
                     checkMenu=false;
                     break;
                 case 6:
@@ -62,7 +66,12 @@ public class MainController {
                     disPlayMenu();
                     break;
                 case 7:
+                    bookingTickets.bookingTicket();
+                    disPlayMenu();
                     checkMenu = false;
+                    break;
+                case 9:
+                    checkMenu=false;
                     break;
             }
         }
