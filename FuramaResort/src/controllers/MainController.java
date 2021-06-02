@@ -15,6 +15,7 @@ public class MainController {
     static IOCustomer ioCustomer = new IOCustomer();
     static NewBooking newBooking = new NewBooking();
     static BookingTickets bookingTickets=new BookingTickets();
+    static FilingCabinets filingCabinets=new FilingCabinets();
 
     public static void main(String[] args) throws UserException, IOException {
 
@@ -32,6 +33,7 @@ public class MainController {
         System.out.println("5. Add New Booking");
         System.out.println("6. Show Information of Employer");
         System.out.println("7. Booking Teckets 4D");
+        System.out.println("8. FilingCabinet");
         System.out.println("9. Exit");
         int choise = scanner.nextInt();
         boolean checkMenu = true;
@@ -69,6 +71,11 @@ public class MainController {
                     bookingTickets.bookingTicket();
                     disPlayMenu();
                     checkMenu = false;
+                    break;
+                case 8:
+                    filingCabinets.serchEmployee();
+                    disPlayMenu();
+                    checkMenu=false;
                     break;
                 case 9:
                     checkMenu=false;
